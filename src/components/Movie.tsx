@@ -14,13 +14,13 @@ import { useMovieFetch } from "../hooks/useMovieFetch";
 //Image
 import NoImage from '../images/no_image.jpg';
 
-const Movie = () => {
+const Movie: React.FC = () => {
     // Below: Name "movieId" on line 18 in App.js
     const { movieId } = useParams();
 
     // Below: Destructoring the useMovieFetch hook to be used here
     //Calling the useFetchMovie hook for the specific movie id, movie/state is now equal to the param movieId
-    const { state: movie, loading, error } = useMovieFetch(movieId);
+    const { state: movie, loading, error } = useMovieFetch(Number(movieId));
 
     console.log(movie)
 
